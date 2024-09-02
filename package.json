@@ -1,0 +1,26 @@
+{
+  "name": "cypress-cucumber-pet-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "npx cypress run",
+    "debug": "npx cypress open",
+    "regression": "npx cypress run --env tags=\"@parallel\"",
+   "cy:parallel": "cypress-parallel -s cy:run -t 3 -d cypress/e2e/bdd-cucumber -a"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.14.1",
+    "cypress-parallel": "^0.14.0"
+  },
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/bdd-cucumber"
+  }
+}
